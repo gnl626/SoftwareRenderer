@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <Windows.h>
 #include <math.h>
+#include "myVector.h"
+#include "myMetrix.h"
 
 using namespace std;
 
@@ -15,122 +17,11 @@ using namespace std;
 
 
 
-class Vector2f
-{
-public:
-	int vCount = 2;
-	float vNum1;
-	float vNum2;
-	Vector2f operator+(const Vector2f &u)
-	{
-		Vector2f v(v.vNum1 + u.vNum1, vNum2 + u.vNum2);
-	}
-};
 
-class Vector3f
-{
-public:
-	int vCount = 3;
-	float vNum1;
-	float vNum2;
-	float vNum3;
-};
 
-class Matrix12
-{
-public:
-	int mCountFirst = 1;
-	int mCountSecond = 2;
-	float mNum11;
-	float mNum12;
-};
 
-class Matrix21
-{
-public:
-	int mCountFirst = 2;
-	int mCountSecond = 1;
-	float mNum11;
-	float mNum21;
-};
 
-class Matrix22
-{
-public:
-	int mCountFirst = 2;
-	int mCountSecond = 2;
-	float mNum11;
-	float mNum12;
-	float mNum21;
-	float mNum22;
-};
 
-class Matrix13
-{
-public:
-	int mCountFirst = 1;
-	int mCountSecond = 3;
-	float mNum11;
-	float mNum12;
-	float mNum13;
-};
-
-class Matrix31
-{
-public:
-	int mCountFirst = 3;
-	int mCountSecond = 1;
-	float mNum11;
-	float mNum21;
-	float mNum31;
-};
-
-class Matrix23
-{
-public:
-	int mCountFirst = 2;
-	int mCountSecond = 3;
-	float mNum11;
-	float mNum12;
-	float mNum13;
-	float mNum21;
-	float mNum22;
-	float mNum23;
-};
-
-class Matrix32
-{
-public:
-	int mCountFirst = 3;
-	int mCountSecond = 2;
-	float mNum11;
-	float mNum12;
-	float mNum21;
-	float mNum22;
-	float mNum31;
-	float mNum32;
-};
-
-class Matrix33
-{
-public:
-	int mCountFirst = 3;
-	int mCountSecond = 3;
-	float mNum11;
-	float mNum12;
-	float mNum13;
-	float mNum21;
-	float mNum22;
-	float mNum23;
-	float mNum31;
-	float mNum32;
-	float mNum33;
-};
-
-void ShowVector(Vector2f u, char* a)
-{
-	cout << a << " = <" << u.vNum1 << ", " << u.vNum2 << "> " << endl;
-}
 
 void ShowVector(Vector3f u, char* a)
 {
@@ -191,10 +82,18 @@ void ShowMatrix(Matrix33 m)
 void main()
 {
 	Vector2f V;
+	Vector2f W;
 	Vector3f U;
 	
 	V.vNum1 = 1;
 	V.vNum2 = 2;
+
+	W.vNum1 = 1;
+	W.vNum2 = 2;
+
+	Vector2f t;
+	//t = V - W;
+	t = V * 5;
 
 	U.vNum1 = 1;
 	U.vNum2 = 2;
@@ -253,15 +152,19 @@ void main()
 	M33.mNum32 = 8;
 	M33.mNum33 = 9;
 
-	ShowVector(U, "U");
-	ShowVector(V, "V");
+	//ShowVector(t, 't');
 
-	ShowMatrix(M12);
-	ShowMatrix(M13);
-	ShowMatrix(M21);
-	ShowMatrix(M22);
-	ShowMatrix(M23);
-	ShowMatrix(M31);
-	ShowMatrix(M32);
-	ShowMatrix(M33);
+	ShowVector(t, "t");
+
+	//ShowVector(U, "U");
+	//ShowVector(V, "V");
+
+	//ShowMatrix(M12);
+	//ShowMatrix(M13);
+	//ShowMatrix(M21);
+	//ShowMatrix(M22);
+	//ShowMatrix(M23);
+	//ShowMatrix(M31);
+	//ShowMatrix(M32);
+	//ShowMatrix(M33);
 }

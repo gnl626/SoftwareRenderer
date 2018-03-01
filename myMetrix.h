@@ -1,4 +1,6 @@
 #pragma once
+#include"stdfx.h"
+
 class Matrix12
 {
 public:
@@ -6,13 +8,6 @@ public:
 	int mCountSecond = 2;
 	float mNum11;
 	float mNum12;
-	Matrix12 operator+(const Matrix12 &m)
-	{
-		Matrix12 n;
-		n.mNum11 = this->mNum11 + m.mNum11;
-		n.mNum12 = this->mNum12 + m.mNum12;
-		return n;
-	}
 	Matrix12 operator+(const Matrix12 &m)
 	{
 		Matrix12 n;

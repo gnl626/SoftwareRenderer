@@ -1,12 +1,7 @@
 #include "myVector.h"
 
 
-
-myVector::myVector()
-{
-}
-
-
-myVector::~myVector()
-{
-}
+//void Vector2f::ShowVector(Vector2f u, char* a)
+//{
+//	
+//}

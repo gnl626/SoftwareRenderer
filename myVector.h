@@ -1,4 +1,8 @@
 #pragma once
+#include"stdfx.h"
+#include <iostream>
+using namespace std;
+
 
 class Vector2f
 {
@@ -7,9 +11,9 @@ public:
 	float vNum1;
 	float vNum2;
 
-	void ShowVector(Vector2f u, char* a)
+	void ShowVector() 
 	{
-		cout << a << " = <" << u.vNum1 << ", " << u.vNum2 << "> " << endl;
+		cout << "<" << this->vNum1 << ", " << this->vNum2 << "> " << endl;
 	}
 
 	Vector2f operator+(const Vector2f &u)
@@ -42,9 +46,9 @@ public:
 	float vNum1;
 	float vNum2;
 	float vNum3;
-	void ShowVector(Vector3f u, char* a)
+	void ShowVector()
 	{
-		cout << a << " = <" << u.vNum1 << ", " << u.vNum2 << ", " << u.vNum3 << "> " << endl;
+		cout << "<" << this->vNum1 << ", " << this->vNum2 << ", " << this->vNum3 << "> " << endl;
 	}
 	Vector3f operator+(const Vector3f &u)
 	{

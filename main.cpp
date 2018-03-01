@@ -1,11 +1,8 @@
-#include <iostream>
-#include <stdio.h>
-#include <Windows.h>
-#include <math.h>
+#include "stdfx.h"
 #include "myVector.h"
 #include "myMetrix.h"
 
-using namespace std;
+
 
 //브레즌함 알고리즘
 //벡터, 행렬 -> 구조체, 클래스
@@ -15,18 +12,6 @@ using namespace std;
 //Matrix22f, Matrix33f, Matrix22i, Matrix33f
 //연산자 오버로딩, operater
 
-
-
-
-
-
-
-
-
-void ShowVector(Vector3f u, char* a)
-{
-	cout << a << " = <" << u.vNum1 << ", " << u.vNum2 << ", " << u.vNum3 << "> " << endl;
-}
 
 void ShowMatrix(Matrix12 m)
 {
@@ -82,18 +67,10 @@ void ShowMatrix(Matrix33 m)
 void main()
 {
 	Vector2f V;
-	Vector2f W;
 	Vector3f U;
 	
 	V.vNum1 = 1;
 	V.vNum2 = 2;
-
-	W.vNum1 = 1;
-	W.vNum2 = 2;
-
-	Vector2f t;
-	//t = V - W;
-	t = V * 5;
 
 	U.vNum1 = 1;
 	U.vNum2 = 2;
@@ -152,19 +129,20 @@ void main()
 	M33.mNum32 = 8;
 	M33.mNum33 = 9;
 
-	//ShowVector(t, 't');
 
-	ShowVector(t, "t");
+	//Vector3f::ShowVector(U, "U");
 
-	//ShowVector(U, "U");
-	//ShowVector(V, "V");
+	//Vector2f::ShowVector(V, "V");
 
-	//ShowMatrix(M12);
-	//ShowMatrix(M13);
-	//ShowMatrix(M21);
-	//ShowMatrix(M22);
-	//ShowMatrix(M23);
-	//ShowMatrix(M31);
-	//ShowMatrix(M32);
-	//ShowMatrix(M33);
+	V.ShowVector();
+
+
+	ShowMatrix(M12);
+	ShowMatrix(M13);
+	ShowMatrix(M21);
+	ShowMatrix(M22);
+	ShowMatrix(M23);
+	ShowMatrix(M31);
+	ShowMatrix(M32);
+	ShowMatrix(M33);
 }

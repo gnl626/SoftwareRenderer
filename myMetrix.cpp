@@ -2,11 +2,4 @@
 
 
 
-myMetrix::myMetrix()
-{
-}
 
-
-myMetrix::~myMetrix()
-{
-}
